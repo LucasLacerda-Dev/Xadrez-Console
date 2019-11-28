@@ -39,6 +39,11 @@ namespace Xadrez_Console
                         Console.WriteLine(e.Message);
                         Console.ReadLine();
                     }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("Valor inserido inválido!");
+                        Console.ReadLine();
+                    }
                 }
                 Console.Clear();
                 Tela.ImprimirPartida(partida);
