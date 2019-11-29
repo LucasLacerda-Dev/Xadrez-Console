@@ -124,7 +124,7 @@ namespace Xadrez_Console
             ConsoleColor aux;
 
             if (peca == null)
-                Console.Write("- ");
+                Console.Write("  ");
             else
             {
                 if (peca.Cor == Cor.Branca)
