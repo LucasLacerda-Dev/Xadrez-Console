@@ -10,7 +10,26 @@ namespace Xadrez_Console
         {
             try
             {
+                char menu;
                 PartidaDeXadrez partida = new PartidaDeXadrez();
+
+                do
+                {
+                    menu = Tela.Menu();
+
+                    Console.Clear();
+                    switch (menu)
+                    {
+                        case '1':
+
+                            break;
+                        case '2':
+                            Tela.ImprimirRanking();
+                            break;
+                        case '3':
+                            break;
+                    }
+                } while (menu != '1' && menu != '3');
 
                 while (!partida.Terminada)
                 {
@@ -34,7 +53,7 @@ namespace Xadrez_Console
 
                         partida.RealizaJogada(origem, destino);
                     }
-                    catch(TabuleiroException e)
+                    catch (TabuleiroException e)
                     {
                         Console.WriteLine(e.Message);
                         Console.ReadLine();
@@ -47,13 +66,14 @@ namespace Xadrez_Console
                 }
                 Console.Clear();
                 Tela.ImprimirPartida(partida);
+
+                Tela.SalvarRanking(partida);
+                Tela.ImprimirRanking();
             }
-            catch(TabuleiroException e)
+            catch (TabuleiroException e)
             {
                 Console.WriteLine(e.Message);
             }
-
-            Console.ReadLine();
         }
     }
 }
